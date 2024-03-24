@@ -1240,7 +1240,7 @@ it must also consume the messages from within the application (using a method wi
 
 By default, a channel can be linked to a single consumer, using `@Incoming` method or `@Channel` reactive stream.
 At application startup, channels are verified to form a chain of consumers and producers with single consumer and producer.
-You can override this behavior by setting `mp.messaging.$channel.broadcast=true` on a channel.
+You can override this behavior by setting `mp.messaging.incoming.$channel.broadcast=true` on a channel.
 
 In case of in-memory channels, `@Broadcast` annotation can be used on the `@Outgoing` method. For example,
 
@@ -1281,7 +1281,7 @@ public class MultipleConsumer {
 
 [NOTE]
 ====
-Reciprocally, multiple producers on the same channel can be merged by setting `mp.messaging.incoming.$channel.merge=true`.
+Reciprocally, multiple producers on the same channel can be merged by setting `mp.messaging.outgoing.$channel.merge=true`.
 On the `@Incoming` methods, you can control how multiple channels are merged using the `@Merge` annotation.
 ====
 
